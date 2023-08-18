@@ -1,15 +1,24 @@
-// import { useState } from 'react'
-// import './App.css'
+import { useState } from 'react'
+import Header from './components/header/Header';
+import Backdrop from './components/backdrop/Backdrop';
+import Sidebar from './components/sidebar/Sidebar'
 
-function App() {
-  // const [count, setCount] = useState(0)
-  return (
-    <div>
-      <p>
-        Here we go again
-      </p>
-    </div>
-  )
+function App({ children }) {
+ const [showSidebar, setShowSidebar] = useState(false)
+ return (
+  <>
+    {showSidebar && (
+      <>
+        <Backdrop onClick={() => setShowSidebar(false)} />
+        <Sidebar setShowSidebar={setShowSidebar} />
+      </>
+    )}
+    <main className={showSidebar ? 'blur-content' : ''}>
+      <Header setShowSidebar={setShowSidebar} />
+      {children}
+    </main>
+  </>
+ );
 }
 
-export default App
+export default App;

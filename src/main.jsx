@@ -11,19 +11,32 @@ import CybertruckPage from './pages/CybertruckPage.jsx'
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<HomePage />,
+    element:(
+      <App>
+        <HomePage />
+      </App>
+    ),
   },
   {
     path:'/model_s',
-    element:<ModelSPage />,
+    element:
+      <App>
+        <ModelSPage />
+      </App>,
   },
   {
     path:'/model_x',
-    element:<ModelXPage />,
+    element:
+      <App>
+        <ModelXPage />
+      </App>,
   },
   {
     path:'/cybertruck',
-    element:<CybertruckPage />,
+    element:
+      <App>
+        <CybertruckPage />
+      </App>,
   },
 ]);
 
