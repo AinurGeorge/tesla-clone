@@ -1,3 +1,10 @@
 :root {
-    --hover-background: rgb(242, 242, 242);
+    --hover-background: rgba(179, 179, 179, 0.2);
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: white;
 }
