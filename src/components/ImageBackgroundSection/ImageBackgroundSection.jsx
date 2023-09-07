@@ -3,7 +3,8 @@ import './ImageBackgroundSection.css'
 export default function ImageBackgroundSection ({
     backgroundImage,
     header,
-    description
+    description,
+    featureItems = []
 }) {
     return (
         <div 
@@ -16,8 +17,20 @@ export default function ImageBackgroundSection ({
                     <p>{description}</p>
                 </div>
                 <div className='bottom-section'>
-                    <button>Order Now</button>
-                    <button>Demo Drive</button>
+                    {featureItems.length > 0 && (
+                        <ul className='feature-items'>
+                            {featureItems.map(({ title,description }) => (
+                                <li key={title}>
+                                    <h6>{title}</h6>
+                                    <p>{description}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                    <div>
+                        <button>Order Now</button>
+                        <button>Demo Drive</button>
+                    </div>
                 </div>
             </div>
         </div>
